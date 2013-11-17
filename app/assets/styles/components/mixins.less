@@ -1,0 +1,136 @@
+// Example LESS mixins for use in other .LESS files
+
+.transition {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;  
+}
+
+.transition-prop(@prop) {
+  -webkit-transition: @prop 0.2s ease;
+  -moz-transition: @prop 0.2s ease;
+  -ms-transition: @prop 0.2s ease;
+  -o-transition: @prop 0.2s ease;
+  transition: @prop 0.2s ease;  
+}
+
+.rotate (@deg: 5deg) {
+  -webkit-transform: rotate(@deg); 
+     -moz-transform: rotate(@deg); 
+      -ms-transform: rotate(@deg); 
+       -o-transform: rotate(@deg); 
+          transform: rotate(@deg); 
+}
+
+.border-box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.border-radius (@radius: 5px) {
+  border-radius: @radius;
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.flip {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.transform(@arguments) {
+  transform: @arguments;
+  -ms-transform: @arguments;
+  -webkit-transform: @arguments;
+  -o-transform: @arguments;
+  -moz-transform: @arguments;
+}
+
+.vertical-gradient(@color_start, @color_stop) {
+  background-color: @color_stop;
+  background-repeat: repeat-x;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@color_stop), to(@color_start));
+  background: -webkit-linear-gradient(top, @color_start, @color_stop);
+  background: -moz-linear-gradient(top, @color_start, @color_stop);
+  background: -ms-linear-gradient(top, @color_start, @color_stop);
+  background: -o-linear-gradient(top, @color_start, @color_stop);
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+  background-color: @startColor;
+  background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+  background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+  background-image: -moz-linear-gradient(left, @startColor, @endColor);
+  background-image: -ms-linear-gradient(left, @startColor, @endColor);
+  background-image: -o-linear-gradient(left, @startColor, @endColor);
+}
+
+.no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+.selection-color {
+  ::-moz-selection {
+     background-color: #f5f2bb;
+     color: #2d2d2d;
+     text-shadow: none;
+  }
+  ::selection {
+     background-color: #f5f2bb;
+     color: #2d2d2d;
+     text-shadow: none;
+  }
+}
+
+.placeholder {
+  ::-webkit-input-placeholder {
+     color: #d9d9d9;
+  }
+
+  :-moz-placeholder {  
+     color: #d9d9d9;  
+  }
+}
+
+.accelerate {
+  -webkit-transform: translateZ(0);
+  // -webkit-perspective: 1000;
+  // -webkit-backface-visibility: hidden;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <title>{{ page.title }}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Content Tags -->
+    <meta http-equiv="content-language" content="en">
+
+    <!-- Assets -->
+    <link rel="stylesheet" href="{{ page.asset_path }}styles/app.css">
+
+  </head>
+  <body class="{{ page.body_class }}">
+    
+    <!-- header.html -->
+    {% include header.html %}
+      <!-- page content -->
+      {{ content }}
+    <!-- footer.html -->
+    {% include footer.html %}
+
+  </body>
+</html>
