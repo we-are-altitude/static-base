@@ -109,12 +109,12 @@ module.exports = function (grunt) {
         less: {
           server: {
             files: {
-              '.tmp/assets/styles/spin-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
+              '.tmp/assets/styles/static-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
             }
           },
           build: {
             files: {
-              'dist/assets/styles/spin-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
+              'dist/assets/styles/static-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
             }
           },          
         },
