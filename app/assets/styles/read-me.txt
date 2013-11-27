@@ -1,0 +1,1 @@
+All .LESS files in this folder will be concatenated and compiled into ‘static-app.css’ automatically. 

@@ -97,12 +97,12 @@ module.exports = function (grunt) {
         coffee: {
             server: {
                 files: {
-                   '.tmp/assets/scripts/app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
+                   '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
                 }              
             },
             build: {
                 files: {
-                   'dist/assets/scripts/app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
+                   'dist/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
                 }
             },          
         },
