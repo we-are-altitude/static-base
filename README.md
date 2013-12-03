@@ -22,7 +22,7 @@ $ npm install
 $ grunt server
 ```
 
-###To build the site for deployment:
+###To build the site for deployment (order is important):
 
 ```
 $ grunt build
