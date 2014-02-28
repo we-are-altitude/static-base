@@ -520,75 +520,25 @@ button, input[type="submit"], input[type="button"], .btn {
 
 .btn-blue, .ui-kit .form-container .btn-primary {
   background-color: #489cf1; }
-
-.btn-blue:hover, .ui-kit .form-container .btn-primary:hover,
-.btn-blue:focus,
-.ui-kit .form-container .btn-primary:focus,
-.btn-blue:active,
-.ui-kit .form-container .btn-primary:active,
-.btn-blue.active,
-.ui-kit .form-container .active.btn-primary {
-  background-color: #60a9f3;
-  border: 0;
-  color: #fff; }
-
-.btn-blue.disabled:hover, .ui-kit .form-container .disabled.btn-primary:hover,
-.btn-blue.disabled:focus,
-.ui-kit .form-container .disabled.btn-primary:focus,
-.btn-blue.disabled:active,
-.ui-kit .form-container .disabled.btn-primary:active,
-.btn-blue.disabled.active,
-.ui-kit .form-container .disabled.active.btn-primary,
-.btn-blue[disabled]:hover,
-.ui-kit .form-container [disabled].btn-primary:hover,
-.btn-blue[disabled]:focus,
-.ui-kit .form-container [disabled].btn-primary:focus,
-.btn-blue[disabled]:active,
-.ui-kit .form-container [disabled].btn-primary:active,
-.btn-blue[disabled].active,
-.ui-kit .form-container [disabled].active.btn-primary,
-fieldset[disabled] .btn-blue:hover,
-fieldset[disabled] .ui-kit .form-container .btn-primary:hover,
-.ui-kit .form-container fieldset[disabled] .btn-primary:hover,
-fieldset[disabled] .btn-blue:focus,
-fieldset[disabled] .ui-kit .form-container .btn-primary:focus,
-.ui-kit .form-container fieldset[disabled] .btn-primary:focus,
-fieldset[disabled] .btn-blue:active,
-fieldset[disabled] .ui-kit .form-container .btn-primary:active,
-.ui-kit .form-container fieldset[disabled] .btn-primary:active,
-fieldset[disabled] .btn-blue.active,
-fieldset[disabled] .ui-kit .form-container .active.btn-primary,
-.ui-kit .form-container fieldset[disabled] .active.btn-primary {
-  background-color: #b2b6b9;
-  color: #dadcdd;
-  cursor: default; }
+  .btn-blue:hover, .ui-kit .form-container .btn-primary:hover, .btn-blue:focus, .ui-kit .form-container .btn-primary:focus, .btn-blue:active, .ui-kit .form-container .btn-primary:active, .btn-blue.active, .ui-kit .form-container .active.btn-primary {
+    background-color: #60a9f3;
+    border: 0;
+    color: #000; }
+  .btn-blue.disabled:hover, .ui-kit .form-container .disabled.btn-primary:hover, .btn-blue.disabled:focus, .ui-kit .form-container .disabled.btn-primary:focus, .btn-blue.disabled:active, .ui-kit .form-container .disabled.btn-primary:active, .btn-blue.disabled.active, .ui-kit .form-container .disabled.active.btn-primary, .btn-blue[disabled]:hover, .ui-kit .form-container [disabled].btn-primary:hover, .btn-blue[disabled]:focus, .ui-kit .form-container [disabled].btn-primary:focus, .btn-blue[disabled]:active, .ui-kit .form-container [disabled].btn-primary:active, .btn-blue[disabled].active, .ui-kit .form-container [disabled].active.btn-primary, fieldset[disabled] .btn-blue:hover, fieldset[disabled] .ui-kit .form-container .btn-primary:hover, .ui-kit .form-container fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-blue:focus, fieldset[disabled] .ui-kit .form-container .btn-primary:focus, .ui-kit .form-container fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-blue:active, fieldset[disabled] .ui-kit .form-container .btn-primary:active, .ui-kit .form-container fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-blue.active, fieldset[disabled] .ui-kit .form-container .active.btn-primary, .ui-kit .form-container fieldset[disabled] .active.btn-primary {
+    background-color: #b2b6b9;
+    color: #dadcdd;
+    cursor: default; }
 
 .btn-dark {
   background-color: #656e74; }
-
-.btn-dark:hover,
-.btn-dark:focus,
-.btn-dark:active,
-.btn-dark.active {
-  background-color: #717b82;
-  border: 0;
-  color: #fff; }
-
-.btn-dark.disabled:hover,
-.btn-dark.disabled:focus,
-.btn-dark.disabled:active,
-.btn-dark.disabled.active,
-.btn-dark[disabled]:hover,
-.btn-dark[disabled]:focus,
-.btn-dark[disabled]:active,
-.btn-dark[disabled].active,
-fieldset[disabled] .btn-dark:hover,
-fieldset[disabled] .btn-dark:focus,
-fieldset[disabled] .btn-dark:active,
-fieldset[disabled] .btn-dark.active {
-  background-color: #b2b6b9;
-  color: #dadcdd;
-  cursor: default; }
+  .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active {
+    background-color: #717b82;
+    border: 0;
+    color: #fff; }
+  .btn-dark.disabled:hover, .btn-dark.disabled:focus, .btn-dark.disabled:active, .btn-dark.disabled.active, .btn-dark[disabled]:hover, .btn-dark[disabled]:focus, .btn-dark[disabled]:active, .btn-dark[disabled].active, fieldset[disabled] .btn-dark:hover, fieldset[disabled] .btn-dark:focus, fieldset[disabled] .btn-dark:active, fieldset[disabled] .btn-dark.active {
+    background-color: #b2b6b9;
+    color: #dadcdd;
+    cursor: default; }
 
 /* ========================================================================= */
 /* Form
@@ -814,7 +764,7 @@ textarea:focus, input:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
-    width: 75%; }
+    width: 70%; }
     @media screen and (max-width: 480px) {
       .ui-kit .color-palette {
         clear: none;

@@ -29,7 +29,7 @@
   }
   
   .color-palette {
-    @include col-(75%);
+    @include col-(70%);
     
     div {
       @include border-radius(4rem);
