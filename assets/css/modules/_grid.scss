@@ -1,0 +1,24 @@
+/* ========================================================================= */
+/* Grid
+/* ========================================================================= */
+
+@mixin cols {
+  display: inline-block;
+  width: 100%;
+  @media screen and (max-width: 480px) {
+    margin: 0 0;
+    text-align: center;
+  }
+}
+
+@mixin col-($number) {
+  @include border-box;
+  float: left;
+  width: $number;
+  @media screen and (max-width: 480px) {
+    clear: none;
+    text-align: center;
+    width: 100%;
+  }
+}
+

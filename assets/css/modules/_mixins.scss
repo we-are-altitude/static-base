@@ -1,0 +1,182 @@
+/* ========================================================================= */
+/* Mixins library
+/* ========================================================================= */
+
+
+@mixin accelerate {
+  -webkit-transform: translateZ(0);
+  // -webkit-perspective: 1000;
+  // -webkit-backface-visibility: hidden;
+}
+
+
+@mixin background-cover {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+@mixin border-box{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+@mixin border-radius ($radius: 5px) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+
+@mixin box-shadow($arguments) {
+  -webkit-box-shadow: $arguments;
+  -moz-box-shadow: $arguments;
+  box-shadow: $arguments;
+}
+
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; 
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+
+@mixin flex {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flexbox: 1;
+  flex: 1 1 auto;
+}
+
+
+@mixin flex-container {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+
+@mixin flip {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+
+@mixin horizontal-gradient ($color_start: #eee, $color_stop: white) {
+  background-color: $color_start;
+  background-image: -webkit-gradient(linear, left top, right top, from($color_start), to($color_stop));
+  background-image: -webkit-linear-gradient(left, $color_start, $color_stop);
+  background-image: -moz-linear-gradient(left, $color_start, $color_stop);
+  background-image: -ms-linear-gradient(left, $color_start, $color_stop);
+  background-image: -o-linear-gradient(left, $color_start, $color_stop);
+}
+
+
+@mixin no-selection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -khtml-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none; 
+}
+
+
+@mixin placeholder ($color, $weight) {
+  ::-webkit-input-placeholder {
+    color: $color;
+    font-weight: $weight;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: $color;
+    font-weight: $weight;
+  }
+  ::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;
+    font-weight: $weight;
+  }
+  :-ms-input-placeholder {  
+    color: $color;
+    font-weight: $weight;
+  }
+}
+
+
+@mixin rotate ($deg: 5deg) {
+  -webkit-transform: rotate($deg); 
+     -moz-transform: rotate($deg); 
+      -ms-transform: rotate($deg); 
+       -o-transform: rotate($deg); 
+          transform: rotate($deg); 
+}
+
+
+@mixin selection-color {
+  ::-moz-selection {
+     background-color: #f5f2bb;
+     color: #2d2d2d;
+     text-shadow: none;
+  }
+  ::selection {
+     background-color: #f5f2bb;
+     color: #2d2d2d;
+     text-shadow: none;
+  }
+}
+
+
+@mixin transform($arguments) {
+  transform: $arguments;
+  -ms-transform: $arguments;
+  -webkit-transform: $arguments;
+  -o-transform: $arguments;
+  -moz-transform: $arguments;
+}
+
+
+@mixin transition($time:0.2s) {
+  -webkit-transition: all $time ease;
+  -moz-transition: all $time ease;
+  -ms-transition: all $time ease;
+  -o-transition: all $time ease;
+  transition: all $time ease;  
+}
+
+
+@mixin transition-prop($prop) {
+  -webkit-transition: $prop 0.2s ease;
+  -moz-transition: $prop 0.2s ease;
+  -ms-transition: $prop 0.2s ease;
+  -o-transition: $prop 0.2s ease;
+  transition: $prop 0.2s ease;  
+}
+
+
+@mixin vertical-gradient($color_start, $color_stop) {
+  background-color: $color_stop;
+  background-repeat: repeat-x;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($color_stop), to($color_start));
+  background: -webkit-linear-gradient(top, $color_start, $color_stop);
+  background: -moz-linear-gradient(top, $color_start, $color_stop);
+  background: -ms-linear-gradient(top, $color_start, $color_stop);
+  background: -o-linear-gradient(top, $color_start, $color_stop);
+}
+

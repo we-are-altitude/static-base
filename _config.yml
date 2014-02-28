@@ -1,4 +1,0 @@
-source: 'app'
-exclude: [fonts, images, '404', bower_components, assets, 'robots.txt', 'favicon.ico']
-keep_files: [fonts, images, '404', bower_components, assets, 'robots.txt', 'favicon.ico']
-destination: 'dist'

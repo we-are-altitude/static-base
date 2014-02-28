@@ -1,0 +1,83 @@
+/* ========================================================================= */
+/* Form
+/* ========================================================================= */
+
+input, input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea {
+  @include transition;
+  background-color: $light;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-size: .778rem;
+  height: 2.05rem;
+  text-indent: 0.444rem;
+  width: 14rem;  
+  &:focus {
+    @include transition;
+    background-color: #fff;
+    border: 2px solid $medium;
+  }
+  &:active {
+    color: $dark;
+  }
+  &.error {
+    background-color: $red;
+    color: #fff;
+  }
+  &.disabled, &[disabled] {
+    background-color: $medium;
+    color: lighten($light, 17%);
+  }
+}
+
+
+
+textarea {
+  padding-top: .4em;
+  resize: none;
+}
+
+label {
+  font-size: 1em;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0 0 0.3125em 0;
+}
+
+select {
+  width: 100%;
+  display: block;
+}
+
+.input-group {
+  @include flex-container;
+  background-color: $light;
+  height: 2.05rem;
+  
+  input {
+    @include flex;
+    float: left;
+  }
+  
+  span {
+    background-color: $light;
+    color: darken($light, 25%);
+    font-size: .778rem;
+    font-weight: bolder;
+    display: inline-block;
+    line-height: 2.1rem;
+    margin: 0;
+    padding: 0;
+    &.prepend {
+      border-right: 2px solid transparent;
+      float: left;
+      padding-left: .8rem;
+    }
+    &.append {
+      border-left: 2px solid transparent;
+      float: right;
+      padding-right: .4rem;
+    }
+  }
+ 
+}
+

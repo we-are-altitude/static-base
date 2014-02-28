@@ -1,0 +1,92 @@
+
+// Based off of 18px
+button, input[type="submit"], input[type="button"], .btn {
+  @include transition;
+  @extend .bold-text;
+  border: 0;
+  color: #fff;
+  display:inline-block;
+  font-size: .778rem;
+  font-weight: 600;
+  height: 2.05rem;
+  letter-spacing: -1px;
+  padding-left: 1.7778em;
+  padding-right: 1.7778em;
+  padding-top: 0.111rem;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  &.disabled {
+    background-color: $medium; 
+    color: lighten($medium, 15%);
+    cursor: default;
+  }
+  &:active {
+    @include box-shadow("0 0 .7778em -.4444em rgba(0, 0, 0, 0.75) inset !important");
+  }
+}
+
+
+// blue
+//////////////////////////
+
+.btn-blue {
+  background-color: $blue;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active {
+  background-color: lighten($blue,5%);
+  border: 0;
+  color: #fff;
+}
+
+.btn-blue.disabled:hover,
+.btn-blue.disabled:focus,
+.btn-blue.disabled:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled]:hover,
+.btn-blue[disabled]:focus,
+.btn-blue[disabled]:active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue:hover,
+fieldset[disabled] .btn-blue:focus,
+fieldset[disabled] .btn-blue:active,
+fieldset[disabled] .btn-blue.active {
+  background-color: $medium; 
+  color: lighten($medium, 15%);
+  cursor: default;
+}
+
+// dark
+//////////////////////////
+
+.btn-dark {
+  background-color: $dark;
+}
+.btn-dark:hover,
+.btn-dark:focus,
+.btn-dark:active,
+.btn-dark.active {
+  background-color: lighten($dark,5%);
+  border: 0;
+  color: #fff;
+}
+
+.btn-dark.disabled:hover,
+.btn-dark.disabled:focus,
+.btn-dark.disabled:active,
+.btn-dark.disabled.active,
+.btn-dark[disabled]:hover,
+.btn-dark[disabled]:focus,
+.btn-dark[disabled]:active,
+.btn-dark[disabled].active,
+fieldset[disabled] .btn-dark:hover,
+fieldset[disabled] .btn-dark:focus,
+fieldset[disabled] .btn-dark:active,
+fieldset[disabled] .btn-dark.active {
+    background-color: $medium; 
+    color: lighten($medium, 15%);
+    cursor: default;
+}

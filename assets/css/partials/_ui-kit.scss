@@ -1,0 +1,78 @@
+/* ========================================================================= */
+/* UI Kit Specific stying
+/* ========================================================================= */
+
+.ui-kit {
+  padding: 0 2rem;
+  
+  main {
+    @include cols;
+  }
+  
+  h1, h2 {
+    @extend .normal-text;
+  }
+  
+  h3 {
+    @extend .light-text;
+    color: $medium;
+    font-size: 0.889rem;
+    margin-bottom: 0.778rem;
+  }
+  
+  section {
+    @include col-(50%);
+  }
+  
+  .container {
+    margin: 2rem 0;
+  }
+  
+  .color-palette {
+    @include col-(75%);
+    
+    div {
+      @include border-radius(4rem);
+      content: "";
+      display: inline-block;
+      height: 4rem;
+      margin: .5rem 2rem .5rem 0;
+      width: 4rem;
+    }
+  }
+  
+  .dark {background-color: $dark;}
+  .medium {background-color: $medium;}
+  .light {background-color: $light;}
+  .main-color {background-color: $blue;}
+  .sub-main-color {background-color: $green;}
+  .sub-color {background-color: $red;}
+  
+  .form-container {
+    text-align: right;
+    
+    h3 {
+      text-align: left;
+    }
+    
+    label {
+      @include col-(36%);
+      margin-right: 4%;
+    }
+    
+    button, div > input, .input-group {
+      @include col-(60%);
+    }
+    
+    .btn-primary {
+      @extend .btn-blue;
+    }
+    
+    .container > div {
+      @include cols;
+      margin-bottom: 1rem;
+    }
+  }
+  
+}
+
