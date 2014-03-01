@@ -6,7 +6,10 @@
   padding: 0 2rem;
   
   main {
-    @include cols;
+    @include column;
+    section {
+      @include cols-(50%);
+    }
   }
   
   h1, h2 {
@@ -20,16 +23,14 @@
     margin-bottom: 0.778rem;
   }
   
-  section {
-    @include col-(50%);
-  }
   
   .container {
     margin: 2rem 0;
   }
   
   .color-palette {
-    @include col-(70%);
+    @include cols-(70%);
+    max-width: 20rem;
     
     div {
       @include border-radius(4rem);
@@ -56,12 +57,13 @@
     }
     
     label {
-      @include col-(36%);
-      margin-right: 4%;
+      @include cols-(36%);
+      line-height: 2rem;
+      margin: 0 4% 0 0;
     }
     
     button, div > input, .input-group {
-      @include col-(60%);
+      @include cols-(60%);
     }
     
     .btn-primary {
@@ -69,8 +71,55 @@
     }
     
     .container > div {
-      @include cols;
+      @include column;
       margin-bottom: 1rem;
+    }
+  }
+  
+  
+  .grid > div {
+    margin: 1rem 0;
+  }
+  
+  .cols-3 {
+    @include column;
+    background-color: $light;
+    color: $dark;
+    padding: .5rem;
+    
+    h3 {
+      color: #111;
+    }
+    
+    div {
+      @include cols-(33%);
+      background-color: $medium;
+      border: 2px solid $dark;
+      height: 3rem;
+      padding: .5rem;
+    }
+  }
+  
+  
+  .cols-1 {
+    @extend .cols-3;
+    
+    div {
+      @include column(50%);
+      margin: 0 auto;
+    }
+  }
+  
+  .cols-1-2 {
+    @extend .cols-3;
+    
+    & > div {
+      @include column(50%);
+      margin: 0 auto;
+      
+      div {
+        @include cols-(50%);
+      }
     }
   }
   

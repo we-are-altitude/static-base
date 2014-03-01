@@ -490,6 +490,12 @@ table {
 /* ======================================================================================== */
 /* Site wide variables
 /* ======================================================================================== */
+/* ========================================================================= */
+/* Media Queries
+/* ========================================================================= */
+/* ========================================================================= */
+/* Buttons
+/* ========================================================================= */
 button, input[type="submit"], input[type="button"], .btn {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -500,7 +506,6 @@ button, input[type="submit"], input[type="button"], .btn {
   color: #fff;
   display: inline-block;
   font-size: .778rem;
-  font-weight: 600;
   height: 2.05rem;
   letter-spacing: -1px;
   padding-left: 1.7778em;
@@ -518,12 +523,19 @@ button, input[type="submit"], input[type="button"], .btn {
     -moz-box-shadow: "0 0 .7778em -.4444em rgba(0, 0, 0, 0.75) inset !important";
     box-shadow: "0 0 .7778em -.4444em rgba(0, 0, 0, 0.75) inset !important"; }
 
+/* ========================================================================= */
+/* This forms the base for the buttons
+/* It will be used to create the button classes below
+/* ========================================================================= */
+/* ========================================================================= */
+/* Create button classes as the project requires.
+/* ========================================================================= */
 .btn-blue, .ui-kit .form-container .btn-primary {
   background-color: #489cf1; }
   .btn-blue:hover, .ui-kit .form-container .btn-primary:hover, .btn-blue:focus, .ui-kit .form-container .btn-primary:focus, .btn-blue:active, .ui-kit .form-container .btn-primary:active, .btn-blue.active, .ui-kit .form-container .active.btn-primary {
     background-color: #60a9f3;
     border: 0;
-    color: #000; }
+    color: white; }
   .btn-blue.disabled:hover, .ui-kit .form-container .disabled.btn-primary:hover, .btn-blue.disabled:focus, .ui-kit .form-container .disabled.btn-primary:focus, .btn-blue.disabled:active, .ui-kit .form-container .disabled.btn-primary:active, .btn-blue.disabled.active, .ui-kit .form-container .disabled.active.btn-primary, .btn-blue[disabled]:hover, .ui-kit .form-container [disabled].btn-primary:hover, .btn-blue[disabled]:focus, .ui-kit .form-container [disabled].btn-primary:focus, .btn-blue[disabled]:active, .ui-kit .form-container [disabled].btn-primary:active, .btn-blue[disabled].active, .ui-kit .form-container [disabled].active.btn-primary, fieldset[disabled] .btn-blue:hover, fieldset[disabled] .ui-kit .form-container .btn-primary:hover, .ui-kit .form-container fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-blue:focus, fieldset[disabled] .ui-kit .form-container .btn-primary:focus, .ui-kit .form-container fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-blue:active, fieldset[disabled] .ui-kit .form-container .btn-primary:active, .ui-kit .form-container fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-blue.active, fieldset[disabled] .ui-kit .form-container .active.btn-primary, .ui-kit .form-container fieldset[disabled] .active.btn-primary {
     background-color: #b2b6b9;
     color: #dadcdd;
@@ -534,7 +546,7 @@ button, input[type="submit"], input[type="button"], .btn {
   .btn-dark:hover, .btn-dark:focus, .btn-dark:active, .btn-dark.active {
     background-color: #717b82;
     border: 0;
-    color: #fff; }
+    color: white; }
   .btn-dark.disabled:hover, .btn-dark.disabled:focus, .btn-dark.disabled:active, .btn-dark.disabled.active, .btn-dark[disabled]:hover, .btn-dark[disabled]:focus, .btn-dark[disabled]:active, .btn-dark[disabled].active, fieldset[disabled] .btn-dark:hover, fieldset[disabled] .btn-dark:focus, fieldset[disabled] .btn-dark:active, fieldset[disabled] .btn-dark.active {
     background-color: #b2b6b9;
     color: #dadcdd;
@@ -549,13 +561,29 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  /* Firefox 18- */
+  /* Firefox 19+ */
   background-color: whitesmoke;
   border: 2px solid transparent;
+  color: #656e74;
   font-family: inherit;
   font-size: .778rem;
+  font-weight: normal;
   height: 2.05rem;
   text-indent: 0.444rem;
   width: 14rem; }
+  input:-moz-placeholder, input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="tel"]:-moz-placeholder, input[type="email"]:-moz-placeholder, textarea:-moz-placeholder {
+    color: #b2b6b9;
+    font-weight: inherit; }
+  input::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="email"]::-moz-placeholder, textarea::-moz-placeholder {
+    color: #b2b6b9;
+    font-weight: inherit; }
+  input:-ms-input-placeholder, input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    color: #b2b6b9;
+    font-weight: inherit; }
+  input::-webkit-input-placeholder, input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #b2b6b9;
+    font-weight: inherit; }
   input:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus, input[type="email"]:focus, textarea:focus {
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
@@ -567,11 +595,31 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
   input:active, input[type="text"]:active, input[type="password"]:active, input[type="tel"]:active, input[type="email"]:active, textarea:active {
     color: #656e74; }
   input.error, input[type="text"].error, input[type="password"].error, input[type="tel"].error, input[type="email"].error, textarea.error {
+    /* Firefox 18- */
+    /* Firefox 19+ */
     background-color: #d44545;
     color: #fff; }
+    input.error:-moz-placeholder, input[type="text"].error:-moz-placeholder, input[type="password"].error:-moz-placeholder, input[type="tel"].error:-moz-placeholder, input[type="email"].error:-moz-placeholder, textarea.error:-moz-placeholder {
+      color: #fff; }
+    input.error::-moz-placeholder, input[type="text"].error::-moz-placeholder, input[type="password"].error::-moz-placeholder, input[type="tel"].error::-moz-placeholder, input[type="email"].error::-moz-placeholder, textarea.error::-moz-placeholder {
+      color: #fff; }
+    input.error:-ms-input-placeholder, input[type="text"].error:-ms-input-placeholder, input[type="password"].error:-ms-input-placeholder, input[type="tel"].error:-ms-input-placeholder, input[type="email"].error:-ms-input-placeholder, textarea.error:-ms-input-placeholder {
+      color: #fff; }
+    input.error::-webkit-input-placeholder, input[type="text"].error::-webkit-input-placeholder, input[type="password"].error::-webkit-input-placeholder, input[type="tel"].error::-webkit-input-placeholder, input[type="email"].error::-webkit-input-placeholder, textarea.error::-webkit-input-placeholder {
+      color: #fff; }
   input.disabled, input[disabled], input[type="text"].disabled, input[type="text"][disabled], input[type="password"].disabled, input[type="password"][disabled], input[type="tel"].disabled, input[type="tel"][disabled], input[type="email"].disabled, input[type="email"][disabled], textarea.disabled, textarea[disabled] {
+    /* Firefox 18- */
+    /* Firefox 19+ */
     background-color: #b2b6b9;
-    color: white; }
+    color: whitesmoke; }
+    input.disabled:-moz-placeholder, input[disabled]:-moz-placeholder, input[type="text"].disabled:-moz-placeholder, input[type="text"][disabled]:-moz-placeholder, input[type="password"].disabled:-moz-placeholder, input[type="password"][disabled]:-moz-placeholder, input[type="tel"].disabled:-moz-placeholder, input[type="tel"][disabled]:-moz-placeholder, input[type="email"].disabled:-moz-placeholder, input[type="email"][disabled]:-moz-placeholder, textarea.disabled:-moz-placeholder, textarea[disabled]:-moz-placeholder {
+      color: whitesmoke; }
+    input.disabled::-moz-placeholder, input[disabled]::-moz-placeholder, input[type="text"].disabled::-moz-placeholder, input[type="text"][disabled]::-moz-placeholder, input[type="password"].disabled::-moz-placeholder, input[type="password"][disabled]::-moz-placeholder, input[type="tel"].disabled::-moz-placeholder, input[type="tel"][disabled]::-moz-placeholder, input[type="email"].disabled::-moz-placeholder, input[type="email"][disabled]::-moz-placeholder, textarea.disabled::-moz-placeholder, textarea[disabled]::-moz-placeholder {
+      color: whitesmoke; }
+    input.disabled:-ms-input-placeholder, input[disabled]:-ms-input-placeholder, input[type="text"].disabled:-ms-input-placeholder, input[type="text"][disabled]:-ms-input-placeholder, input[type="password"].disabled:-ms-input-placeholder, input[type="password"][disabled]:-ms-input-placeholder, input[type="tel"].disabled:-ms-input-placeholder, input[type="tel"][disabled]:-ms-input-placeholder, input[type="email"].disabled:-ms-input-placeholder, input[type="email"][disabled]:-ms-input-placeholder, textarea.disabled:-ms-input-placeholder, textarea[disabled]:-ms-input-placeholder {
+      color: whitesmoke; }
+    input.disabled::-webkit-input-placeholder, input[disabled]::-webkit-input-placeholder, input[type="text"].disabled::-webkit-input-placeholder, input[type="text"][disabled]::-webkit-input-placeholder, input[type="password"].disabled::-webkit-input-placeholder, input[type="password"][disabled]::-webkit-input-placeholder, input[type="tel"].disabled::-webkit-input-placeholder, input[type="tel"][disabled]::-webkit-input-placeholder, input[type="email"].disabled::-webkit-input-placeholder, input[type="email"][disabled]::-webkit-input-placeholder, textarea.disabled::-webkit-input-placeholder, textarea[disabled]::-webkit-input-placeholder {
+      color: whitesmoke; }
 
 textarea {
   padding-top: .4em;
@@ -633,19 +681,18 @@ html, body {
 html {
   position: relative; }
 
-body, .normal-text, .ui-kit h1, .ui-kit h2 {
+body, .normal-text, input, input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea, .ui-kit h1, .ui-kit h2 {
   font-style: normal;
-  font-weight: normal; }
+  font-weight: 500; }
 
 .light-text, .ui-kit h3 {
-  font-weight: lighter; }
+  font-weight: 100; }
 
-b, em, strong, .bold-text, button, input[type="submit"], input[type="button"], .btn {
-  font-weight: bolder; }
+b, em, strong, .bold-text, button, input[type="submit"], input[type="button"], .btn, i, .italic-text {
+  font-weight: 600; }
 
 i, .italic-text {
-  font-style: italic;
-  font-weight: bolder; }
+  font-style: italic; }
 
 /* ========================================================================= */
 /* Base container, default width
@@ -694,24 +741,6 @@ ul, ol, li {
 img {
   max-width: 100%; }
 
-::-webkit-input-placeholder {
-  color: inherit;
-  font-weight: inherit; }
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  color: inherit;
-  font-weight: inherit; }
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  color: inherit;
-  font-weight: inherit; }
-
-:-ms-input-placeholder {
-  color: inherit;
-  font-weight: inherit; }
-
 /* ========================================================================= */
 /*Chrome resets
 /* ========================================================================= */
@@ -737,26 +766,27 @@ textarea:focus, input:focus {
   padding: 0 2rem; }
   .ui-kit main {
     display: inline-block;
+    height: auto;
+    float: none;
     width: 100%; }
-    @media screen and (max-width: 480px) {
+    @media screen and (max-width: 599px) {
       .ui-kit main {
         margin: 0 0;
-        text-align: center; } }
+        width: 100%; } }
+    .ui-kit main section {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 50%; }
+      @media screen and (max-width: 599px) {
+        .ui-kit main section {
+          clear: none;
+          width: 100%; } }
   .ui-kit h3 {
     color: #b2b6b9;
     font-size: 0.889rem;
     margin-bottom: 0.778rem; }
-  .ui-kit section {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    float: left;
-    width: 50%; }
-    @media screen and (max-width: 480px) {
-      .ui-kit section {
-        clear: none;
-        text-align: center;
-        width: 100%; } }
   .ui-kit .container {
     margin: 2rem 0; }
   .ui-kit .color-palette {
@@ -764,11 +794,11 @@ textarea:focus, input:focus {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
-    width: 70%; }
-    @media screen and (max-width: 480px) {
+    width: 70%;
+    max-width: 20rem; }
+    @media screen and (max-width: 599px) {
       .ui-kit .color-palette {
         clear: none;
-        text-align: center;
         width: 100%; } }
     .ui-kit .color-palette div {
       border-radius: 4rem;
@@ -801,11 +831,11 @@ textarea:focus, input:focus {
       box-sizing: border-box;
       float: left;
       width: 36%;
-      margin-right: 4%; }
-      @media screen and (max-width: 480px) {
+      line-height: 2rem;
+      margin: 0 4% 0 0; }
+      @media screen and (max-width: 599px) {
         .ui-kit .form-container label {
           clear: none;
-          text-align: center;
           width: 100%; } }
     .ui-kit .form-container button, .ui-kit .form-container div > input, .ui-kit .form-container .input-group {
       -webkit-box-sizing: border-box;
@@ -813,36 +843,77 @@ textarea:focus, input:focus {
       box-sizing: border-box;
       float: left;
       width: 60%; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 599px) {
         .ui-kit .form-container button, .ui-kit .form-container div > input, .ui-kit .form-container .input-group {
           clear: none;
-          text-align: center;
           width: 100%; } }
     .ui-kit .form-container .container > div {
       display: inline-block;
+      height: auto;
+      float: none;
       width: 100%;
       margin-bottom: 1rem; }
-      @media screen and (max-width: 480px) {
+      @media screen and (max-width: 599px) {
         .ui-kit .form-container .container > div {
           margin: 0 0;
-          text-align: center; } }
-
-/* ========================================================================= */
-/* Media Queries
-/* ========================================================================= */
-/* ================================================= */
-/* Mobile Phone layout
-/* <= 599px
-/* ================================================= */
-/* ================================================= */
-/* Tablet layout
-/* ~600px - 959px
-/* ================================================= */
-/* ================================================= */
-/* Desktop layout
-/* ~960px - 1167px
-/* ================================================= */
-/* ================================================= */
-/* Widescreen layout
-/* 1168px+
-/* ================================================= */
+          width: 100%; } }
+  .ui-kit .grid > div {
+    margin: 1rem 0; }
+  .ui-kit .cols-3, .ui-kit .cols-1, .ui-kit .cols-1-2 {
+    display: inline-block;
+    height: auto;
+    float: none;
+    width: 100%;
+    background-color: whitesmoke;
+    color: #656e74;
+    padding: .5rem; }
+    @media screen and (max-width: 599px) {
+      .ui-kit .cols-3, .ui-kit .cols-1, .ui-kit .cols-1-2 {
+        margin: 0 0;
+        width: 100%; } }
+    .ui-kit .cols-3 h3, .ui-kit .cols-1 h3, .ui-kit .cols-1-2 h3 {
+      color: #111; }
+    .ui-kit .cols-3 div, .ui-kit .cols-1 div, .ui-kit .cols-1-2 div {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 33.333%;
+      background-color: #b2b6b9;
+      border: 2px solid #656e74;
+      height: 3rem;
+      padding: .5rem; }
+      @media screen and (max-width: 599px) {
+        .ui-kit .cols-3 div, .ui-kit .cols-1 div, .ui-kit .cols-1-2 div {
+          clear: none;
+          width: 100%; } }
+  .ui-kit .cols-1 div {
+    display: table;
+    height: auto;
+    float: none;
+    width: 50%;
+    margin: 0 auto; }
+    @media screen and (max-width: 599px) {
+      .ui-kit .cols-1 div {
+        margin: 0 0;
+        width: 100%; } }
+  .ui-kit .cols-1-2 > div {
+    display: table;
+    height: auto;
+    float: none;
+    width: 50%;
+    margin: 0 auto; }
+    @media screen and (max-width: 599px) {
+      .ui-kit .cols-1-2 > div {
+        margin: 0 0;
+        width: 100%; } }
+    .ui-kit .cols-1-2 > div div {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      float: left;
+      width: 50%; }
+      @media screen and (max-width: 599px) {
+        .ui-kit .cols-1-2 > div div {
+          clear: none;
+          width: 100%; } }

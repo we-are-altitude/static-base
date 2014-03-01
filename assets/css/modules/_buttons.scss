@@ -9,7 +9,6 @@ button, input[type="submit"], input[type="button"], .btn {
   color: #fff;
   display:inline-block;
   font-size: .778rem;
-  font-weight: 600;
   height: 2.05rem;
   letter-spacing: -1px;
   padding-left: 1.7778em;
@@ -32,19 +31,12 @@ button, input[type="submit"], input[type="button"], .btn {
 /* This forms the base for the buttons
 /* It will be used to create the button classes below
 /* ========================================================================= */
-@mixin btn-base($color) {
+@mixin btn-base($color, $hover: #fff) {
   background-color: $color;
   &:hover, &:focus, &:active, &.active {
     background-color: lighten($color,5%);
     border: 0;
-    
-    @if lightness($color) < 50% {
-      //color is dark 
-      color: #fff;
-    } @else {
-      //color is light 
-      color: #000;
-    }
+    color: $hover;
   }
   &.disabled:hover, &.disabled:focus, &.disabled:active, &.disabled.active,
   &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled].active,

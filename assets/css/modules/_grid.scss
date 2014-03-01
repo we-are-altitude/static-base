@@ -2,22 +2,36 @@
 /* Grid
 /* ========================================================================= */
 
-@mixin cols {
-  display: inline-block;
-  width: 100%;
-  @media screen and (max-width: 480px) {
+@mixin column($width: 100%) {
+  @if $width < 100% {
+    display: table;
+  } @else {
+    display: inline-block;
+  }
+  height: auto;
+  float: none;
+  width: $width;
+  
+  //Media Query
+  @media #{$phone} {
     margin: 0 0;
-    text-align: center;
+    width: 100%;
   }
 }
 
-@mixin col-($number) {
+@mixin cols-($width) {
+  @if $width == 33% {
+    $width: 33.333%;
+  } @else if $width == 66% {
+    $width: 66.666%;
+  }
   @include border-box;
   float: left;
-  width: $number;
-  @media screen and (max-width: 480px) {
+  width: $width;
+  
+  //Media Query
+  @media #{$phone} {
     clear: none;
-    text-align: center;
     width: 100%;
   }
 }

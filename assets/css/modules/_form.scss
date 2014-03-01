@@ -4,10 +4,14 @@
 
 input, input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea {
   @include transition;
+  @include placeholder{color: $medium; font-weight:inherit;};
+  @extend .normal-text;
   background-color: $light;
   border: 2px solid transparent;
+  color: $dark;
   font-family: inherit;
   font-size: .778rem;
+  font-weight: normal;
   height: 2.05rem;
   text-indent: 0.444rem;
   width: 14rem;  
@@ -20,16 +24,16 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
     color: $dark;
   }
   &.error {
+    @include placeholder{color: #fff;};
     background-color: $red;
     color: #fff;
   }
   &.disabled, &[disabled] {
+    @include placeholder{color: $light;};
     background-color: $medium;
-    color: lighten($light, 17%);
+    color: $light;
   }
 }
-
-
 
 textarea {
   padding-top: .4em;
