@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <title>Static Base</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/index.js'></script>
+    
+    <!-- Content Tags -->
+    <meta http-equiv="content-language" content="en">
+
+    <!-- Assets -->
+    
+
+    <link href="assets/favicon.ico" rel="shortcut icon">
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+    
+  </head>
+
+  <body class="ui-kit">
+
+    <header>
+      <h1>Header / Nav / Etc</h1>
+<nav>
+  <ul>  
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/ui-kit.html">UI Kit</a></li>
+  </ul>
+</nav>
+<hr>
+    </header>
+
+  <main>
+    <h1>UI Kit</h1>
+    
+    <section>
+      <div class="container">
+        <h3>Type Weight</h3>
+        <div class="type-weight">
+          <div class="light-text">Text Light</div>
+          <div>Text Base</div>
+          <strong>Text Strong</strong>
+        </div>
+      </div>
+
+      <div class="container">
+        <h3>Type sizes</h3>
+        <h1>Text h1 Header</h1>
+        <h2>Text h2 Title</h2>
+        <div>Text Body Default</div>
+      </div>
+      
+      <div class="container color-palette">
+        <h3>Color Palette</h3>
+        <div class="dark"></div>
+        <div class="medium"></div>
+        <div class="light"></div>
+        <div class="main-color"></div>
+        <div class="sub-main-color"></div>
+        <div class="sub-color"></div>
+      </div>
+    </section>
+
+    <section class="form-container">
+      <div class="container">
+        <h3>Buttons</h3>
+        <div>
+          <label for="primary">Primary</label>
+          <button type="submit" id="primary" class="btn-primary">Signup</button>
+        </div>
+        <div>
+          <label for="dark">Dark</label>
+          <button type="submit" id="dark" class="btn-dark">Signup</button>
+        </div>
+        <div>
+          <label for="disabled-btn">Disabled</label>
+          <button type="submit" id="disabled-btn" class="btn-dark disabled">Signup</button>
+        </div>
+      </div>
+      
+      <div class="container">
+        <h3>Form Inputs</h3>
+
+        <div>
+          <label for="placeholder">Placeholder</label>
+          <input type="text" id="placeholder" placeholder="Placeholder text...">
+        </div>
+        <div>
+          <label for="filled">Filled</label>
+          <input type="text" class="filled" id="filled" value="jsmith@email.com">
+        </div>
+        <div>
+          <label for="focused">Focused</label>
+          <input type="text" class="focused" id="focused" placeholder="jsmith |" autofocus>
+        </div>
+        <div>
+          <label for="error">Error</label>
+          <input type="text" class="error" id="error" placeholder="jsmith@email.com">
+        </div>
+        <div>
+          <label for="disabled">Disabled</label>
+          <input type="text" id="disabled" placeholder="jsmith@email.com" disabled>
+        </div>
+        <div>
+          <label for="pend">App/Pre-pend</label>
+          <span class="input-group">
+            <span class="prepend">$</span>
+            <input type="text" id="pend" value="15.99">
+            <span class="append">USD</span>
+          </span>
+        </div>
+      </div>
+      
+    </section>
+  </main>
+
+  <section class="grid">
+    <h2>Grid</h2>
+    <div class="cols-3">
+      <h3>3 cols</h3>
+      <div></div>
+      <div>3 columns</div>
+      <div></div>
+    </div>
+    
+    <div class="cols-1">
+      <h3>1 col</h3>
+      <div>Single Centered Column</div>
+    </div>
+    
+     <div class="cols-1-2">
+      <h3>1 col with 2</h3>
+      <div>
+        <h3>Single Centered Column</h3>
+        <div>With Two</div>
+        <div>Nested Columns</div>
+      </div>
+    </div>
+    
+    
+  </section>
+  
+  <footer>
+    <hr>
+    Footer / Copyright / Etc
+  </footer>
+
+</body>
+
+</html>

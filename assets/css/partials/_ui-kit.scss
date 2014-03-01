@@ -1,0 +1,127 @@
+/* ========================================================================= */
+/* UI Kit Specific stying
+/* ========================================================================= */
+
+.ui-kit {
+  padding: 0 2rem;
+  
+  main {
+    @include column;
+    section {
+      @include cols-(50%);
+    }
+  }
+  
+  h1, h2 {
+    @extend .normal-text;
+  }
+  
+  h3 {
+    @extend .light-text;
+    color: $medium;
+    font-size: 0.889rem;
+    margin-bottom: 0.778rem;
+  }
+  
+  
+  .container {
+    margin: 2rem 0;
+  }
+  
+  .color-palette {
+    @include cols-(70%);
+    max-width: 20rem;
+    
+    div {
+      @include border-radius(4rem);
+      content: "";
+      display: inline-block;
+      height: 4rem;
+      margin: .5rem 2rem .5rem 0;
+      width: 4rem;
+    }
+  }
+  
+  .dark {background-color: $dark;}
+  .medium {background-color: $medium;}
+  .light {background-color: $light;}
+  .main-color {background-color: $blue;}
+  .sub-main-color {background-color: $green;}
+  .sub-color {background-color: $red;}
+  
+  .form-container {
+    text-align: right;
+    
+    h3 {
+      text-align: left;
+    }
+    
+    label {
+      @include cols-(36%);
+      line-height: 2rem;
+      margin: 0 4% 0 0;
+    }
+    
+    button, div > input, .input-group {
+      @include cols-(60%);
+    }
+    
+    .btn-primary {
+      @extend .btn-blue;
+    }
+    
+    .container > div {
+      @include column;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  
+  .grid > div {
+    margin: 1rem 0;
+  }
+  
+  .cols-3 {
+    @include column;
+    background-color: $light;
+    color: $dark;
+    padding: .5rem;
+    
+    h3 {
+      color: #111;
+    }
+    
+    div {
+      @include cols-(33%);
+      background-color: $medium;
+      border: 2px solid $dark;
+      height: 3rem;
+      padding: .5rem;
+    }
+  }
+  
+  
+  .cols-1 {
+    @extend .cols-3;
+    
+    div {
+      @include column(50%);
+      margin: 0 auto;
+    }
+  }
+  
+  .cols-1-2 {
+    @extend .cols-3;
+    
+    & > div {
+      @include column(50%);
+      margin: 0 auto;
+      
+      div {
+        @include cols-(50%);
+      }
+    }
+  }
+  
+}
+
