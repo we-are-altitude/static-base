@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+  <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+  <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+  <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <title>Static Base</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link'); 
+                    for (var i = 0; i < links.length;i++) { 
+                    var link = links[i]; 
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) { 
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,''); 
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+
+    <link rel='stylesheet' href='assets/css/style.css'>
+    <script src='assets/js/index.js'></script>
+    
+    <!-- Content Tags -->
+    <meta http-equiv="content-language" content="en">
+
+    <!-- Assets -->
+    
+
+    <link href="assets/favicon.ico" rel="shortcut icon">
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon">
+    
+  </head>
+
+  <body class="index">
+
+    <header>
+      <h1>Header / Nav / Etc</h1>
+<nav>
+  <ul>  
+    <li><a href="/" class="active">Home</a></li>
+    <li><a href="/ui-kit.html">UI Kit</a></li>
+  </ul>
+</nav>
+<hr>
+    </header>
+
+  <section>
+    <!-- Start: Remove me and add your own content -->
+    <h1>Static Base</h1>
+    <p>This is a simple boiler plate for static websites. It includes:</p>
+    <ul>
+      <li>A basic grid system.</li>
+      <li>Some form and button modules.</li>
+      <li>A UI kit from which to get/see initial styles.</li>
+      <li>An initial structure for your includes, styles and javascript.</li>
+    </ul>
+
+    Follow us for more goodies: <a href="http://twitter.com/@twanlass">@twanlass</a> / <a href="http://twitter.com/@dev_vine">@dev_vine</a> / <a href="http://twitter.com/@WeAreAltitude">@WeAreAltitude</a>
+    <!-- End: Remove me and add your own content -->
+  </section>
+  
+  <footer>
+    <hr>
+    Footer / Copyright / Etc
+  </footer>
+
+</body>
+
+</html>

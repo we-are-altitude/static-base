@@ -1,1 +1,0 @@
-View specific js should go here. Things like interactions specific to a certain view.
