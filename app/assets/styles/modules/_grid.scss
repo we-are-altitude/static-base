@@ -1,0 +1,38 @@
+/* ========================================================================= */
+/* Grid
+/* ========================================================================= */
+
+@mixin column($width: 100%) {
+  @if $width < 100% {
+    display: table;
+  } @else {
+    display: inline-block;
+  }
+  height: auto;
+  float: none;
+  width: $width;
+  
+  //Media Query
+  @media #{$phone} {
+    margin: 0 0;
+    width: 100%;
+  }
+}
+
+@mixin cols-($width) {
+  @if $width == 33% {
+    $width: 33.333%;
+  } @else if $width == 66% {
+    $width: 66.666%;
+  }
+  @include border-box;
+  float: left;
+  width: $width;
+  
+  //Media Query
+  @media #{$phone} {
+    clear: none;
+    width: 100%;
+  }
+}
+

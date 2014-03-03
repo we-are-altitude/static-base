@@ -1,0 +1,62 @@
+/* ========================================================================= */
+/* Buttons
+/* ========================================================================= */
+
+button, input[type="submit"], input[type="button"], .btn {
+  @include transition;
+  @extend .bold-text;
+  border: 0;
+  color: #fff;
+  display:inline-block;
+  font-size: .778rem;
+  height: 2.05rem;
+  letter-spacing: -1px;
+  padding-left: 1.7778em;
+  padding-right: 1.7778em;
+  padding-top: 0.111rem;
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+  &.disabled {
+    background-color: $medium; 
+    color: lighten($medium, 15%);
+    cursor: default;
+  }
+  &:active {
+    @include box-shadow("0 0 .7778em -.4444em rgba(0, 0, 0, 0.75) inset !important");
+  }
+}
+
+/* ========================================================================= */
+/* This forms the base for the buttons
+/* It will be used to create the button classes below
+/* ========================================================================= */
+@mixin btn-base($color, $hover: #fff) {
+  background-color: $color;
+  &:hover, &:focus, &:active, &.active {
+    background-color: lighten($color,5%);
+    border: 0;
+    color: $hover;
+  }
+  &.disabled:hover, &.disabled:focus, &.disabled:active, &.disabled.active,
+  &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled].active,
+  fieldset[disabled] &:hover, fieldset[disabled] &:focus, fieldset[disabled] &:active,
+  fieldset[disabled] &.active {
+    background-color: $medium; 
+    color: lighten($medium, 15%);
+    cursor: default;
+  }
+}
+
+
+/* ========================================================================= */
+/* Create button classes as the project requires.
+/* ========================================================================= */
+.btn-blue {
+  @include btn-base($blue);
+}
+
+.btn-dark {
+  @include btn-base($dark);
+}
+
