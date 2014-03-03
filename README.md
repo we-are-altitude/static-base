@@ -4,10 +4,11 @@ Static base is a foundation for a static websites. It combines Jekyll (for stati
 
 Currently, Static Base is simple but the following:
 
-- Auto-compiles Coffeescript and LESS files for you
+- Auto-compiles Coffeescript and SASS files for you
 - Uses Live Reload for faster development
 - Concatenates your resulting CSS & JS files into one file each
 - Provides an intial structure for your CSS & JS 
+- Provides a basic grid, form and button modules
 - Has 1 simple command to build your site so that's is ready for deployment
  
 
