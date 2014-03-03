@@ -6,12 +6,6 @@ var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
 };
 
-// # Globbing
-// for performance reasons we're only matching one level down:
-// 'test/spec/{,*/}*.js'
-// use this if you want to recursively match all subfolders:
-// 'test/spec/**/*.js'
-
 module.exports = function (grunt) {
     // load all grunt tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
@@ -26,12 +20,16 @@ module.exports = function (grunt) {
         yeoman: yeomanConfig,
         watch: {
             coffee: {
-                files: ['<%= yeoman.app %>/assets/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:server']
+              files: ['<%= yeoman.app %>/assets/scripts/{,*/}*.coffee'],
+              tasks: ['coffee:server']
             },
-            less: {
-              files: ['<%= yeoman.app %>/assets/styles/{,*/}*.less'],
-              tasks: ['less:server']
+            concat: {
+              files: ['<%= yeoman.app %>/assets/scripts/vendor/{,*/}*.js'],
+              tasks: ['concat:server']
+            },
+            sass: {
+              files: ['<%= yeoman.app %>/assets/styles/{,*/}*.scss'],
+              tasks: ['sass:server']
             },   
             jekyll: {
               files: ['<%= yeoman.app %>/{,*/}*.html', '<%= yeoman.app %>/{,*/}*.md'],
@@ -53,7 +51,7 @@ module.exports = function (grunt) {
             options: {
                 port: 9000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -97,27 +95,61 @@ module.exports = function (grunt) {
         coffee: {
             server: {
                 files: {
-                   '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
+                   '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/*/*.coffee']
                 }              
             },
             build: {
                 files: {
-                   'dist/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/vendor/*.coffee', 'app/assets/scripts/components/*.coffee', 'app/assets/scripts/views/*.coffee']
+                   '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/*.coffee', 'app/assets/scripts/*/*.coffee']
                 }
             },          
         },
-        less: {
+        concat: {
           server: {
             files: {
-              '.tmp/assets/styles/static-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
-            }
+              '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/vendor/{,*/}*.js', '.tmp/assets/scripts/static-app.js']
+            }    
           },
           build: {
             files: {
-              'dist/assets/styles/static-app.css': ['app/assets/styles/vendor/*.css', 'app/assets/styles/**/*.less']
-            }
+              '.tmp/assets/scripts/static-app.js': ['app/assets/scripts/vendor/{,*/}*.js', '.tmp/assets/scripts/static-app.js']
+            }    
+          }          
+        },
+        uglify: {
+          build: {
+            files: {
+              'dist/assets/scripts/static-app.js': '.tmp/assets/scripts/static-app.js'
+            }            
           },          
         },
+        sass: {
+          server: {
+            files: [{
+              expand: true,
+              cwd: 'app/assets/styles',
+              src:['**/*.scss', '**/*.css'],
+              dest: '.tmp/assets/styles',
+              ext: '.css'
+            }]
+          },
+          build: {
+            files: [{
+              expand: true,
+              cwd: 'app/assets/styles',
+              src:['**/*.scss', '**/*.css'],
+              dest: '.tmp/assets/styles',
+              ext: '.css'
+            }]
+          },          
+        }, 
+        cssmin: {
+          build: {
+            files: {
+              'dist/assets/styles/static-app.css' : '.tmp/assets/styles/static-app.css'
+            }
+          }
+        },              
         copy: {
             server: {
                 files: [{
@@ -145,19 +177,19 @@ module.exports = function (grunt) {
                         '.htaccess',
                         'assets/images/{,*/}*',
                         'assets/fonts/{,*/}*',
-                        'assets/scripts/{,*/}*.js'
+                        'assets/scripts/*.js',
                     ]
                 }]
             }            
         },
         concurrent: {
             server: [
-                'less:server',
+                'sass:server',
                 'coffee:server',
             ],
             build: [
                 'coffee:build',
-                'less:build'
+                'sass:build'
             ]
         },
         jekyll: {                             
@@ -194,10 +226,11 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:build',
-        // 'concurrent:build',
-        // 'jekyll:build',
         'coffee:build',
-        'less:build',
+        'concat:build',
+        'uglify:build',
+        'sass:build',
+        'cssmin:build',
         'copy:build'
     ]);
 
