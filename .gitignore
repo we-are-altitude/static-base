@@ -1,5 +1,7 @@
 *.lock
-
 .tmp/
-node_modules/
 .sass-cache/
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+/public

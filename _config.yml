@@ -1,4 +1,12 @@
-source: 'app'
-exclude: [fonts, images, '404', bower_components, assets, 'robots.txt', 'favicon.ico']
-keep_files: [fonts, images, '404', bower_components, assets, 'robots.txt', 'favicon.ico']
-destination: 'dist'
+# Jekyll Customizations
+exclude: ['Gemfile', 'Gemfile.lock', 'Guardfile', 'config.ru', 'README.md', 'Procfile', 'vendor', 'gems']
+source: 'site'
+destination: 'public'
+relative_permalinks: true
+permalink: pretty
+permalink: /blog/:title
+
+
+# Default Jekyll Config
+markdown: redcarpet
+pygments: true
