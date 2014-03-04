@@ -1,0 +1,11 @@
+# Custom Site Config
+env: local
+cdn: http://localhost:4000/
+
+# Jekyll Asset Pipeline Config
+asset_pipeline:
+    bundle: false            
+    compress: false          
+    output_path: assets     
+    display_path: //localhost:4000/assets
+    gzip: false

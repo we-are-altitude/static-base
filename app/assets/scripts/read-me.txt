@@ -1,1 +1,0 @@
-All .coffee files in this folder will be concatenated and compiled into ‘static-app.js’ automatically. 
