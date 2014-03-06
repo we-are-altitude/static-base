@@ -3,8 +3,6 @@ guard "jekyll-plus", :extensions => ['less', 'sass', 'scss', 'coffeescript', 'js
   ignore /public/
 end
 
-
-guard 'livereload', host: '127.0.0.1'  do
-  watch(%r{site/.+\.(html|scss|css|js|coffee)})
-  watch(%r{public/.+\.(css|js|html)})
+guard 'livereload', apply_css_live: true,  host: '127.0.0.1'  do
+  watch('site/.*')
 end
