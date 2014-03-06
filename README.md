@@ -1,3 +1,12 @@
+Includes
+============
+- Live Reload
+- File watching/auto regeneration
+- SASS/LESS support
+- Coffeescript support
+- Altitude simple grid, form module, button module
+- A starter UI Kit
+
 Get Started With Static Base
 ============
 
