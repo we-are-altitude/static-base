@@ -25,3 +25,8 @@ Bundle only needs to be created once.
 `$ guard`
 
 Then simply go to http://localhost:4000
+
+
+
+###Follow us for more updates:
+[@twanlass](http://www.twitter.com/@twanlass) / [@dev_vine](http://www.twitter.com/@dev_vine) / [@WeAreAltitude](http://www.twitter.com/@WeAreAltitude)
