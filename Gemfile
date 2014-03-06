@@ -10,6 +10,7 @@ gem 'jekyll-asset-pipeline'
 gem 'coffee-script'
 gem "less"
 gem "sass"
+gem "guard-livereload"
 gem 'therubyracer'
 gem 'yui-compressor'
 gem 'closure-compiler'

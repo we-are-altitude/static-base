@@ -27,7 +27,7 @@ module JekyllAssetPipeline
 
       def convert
         Dir.chdir "./site/_assets/stylesheets" do
-          return Sass::Engine.new(@content, syntax: :scss).render
+            return Sass::Engine.new(@content, syntax: :scss, debug_info: true).render
         end
       end
     end
