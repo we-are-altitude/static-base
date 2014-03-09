@@ -102,11 +102,31 @@
 
 @mixin placeholder {
   /* Firefox 18- */
-  &:-moz-placeholder {@content}
+  &:-moz-placeholder {@content};
   /* Firefox 19+ */
-  &::-moz-placeholder {@content}
-  &:-ms-input-placeholder {@content}
-  &::-webkit-input-placeholder {@content}
+  &::-moz-placeholder {@content};
+  &:-ms-input-placeholder {@content};
+  &::-webkit-input-placeholder {@content};
+}
+
+
+@mixin placeholder-image($width, $height) {
+  background-color: #ccc;
+  display: inline-block;
+  height: #{$height}px;
+  position: relative;
+  width: #{$width}px;
+  &:after {
+    color: #afafaf;
+    content: '#{$width}x#{$height}';
+    left: 0;
+    line-height: #{$height}px;
+    position: absolute;
+    text-align: center;
+    text-shadow: 0 1px #888;
+    top: 0;
+    width: #{$width}px;
+  } 
 }
 
 
