@@ -6,7 +6,7 @@ gem 'rack'
 gem 'rack-contrib'
 gem 'jekyll', '~> 1.4.3'
 gem 'maruku'
-gem 'jekyll-asset-pipeline'
+gem 'jekyll-asset-pipeline',  :git => 'git//github.com/we-are-altitude/jekyll-asset-pipeline.git'
 gem 'coffee-script'
 gem "less"
 gem "sass"
