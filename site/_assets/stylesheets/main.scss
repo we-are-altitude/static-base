@@ -51,6 +51,11 @@ i, .italic-text {
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  
+  //Media Query
+  @media #{$phone} {
+    width: 100%;
+  }
 }
 
 

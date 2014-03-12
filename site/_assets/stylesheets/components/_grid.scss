@@ -3,11 +3,7 @@
 /* ========================================================================= */
 
 @mixin column($width: 100%) {
-  @if $width < 100% {
-    display: table;
-  } @else {
-    display: inline-block;
-  }
+  display: table;
   height: auto;
   float: none;
   width: $width;
