@@ -13,7 +13,7 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
   font-size: .778rem;
   height: 2.05rem;
   text-indent: 0.444rem;
-  width: 14rem;  
+  width: 100%;
   &:focus {
     @include transition;
     background-color: #fff;
