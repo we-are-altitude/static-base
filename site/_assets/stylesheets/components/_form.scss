@@ -51,7 +51,7 @@ select {
   display: block;
 }
 
-.input-group {
+.pend-group {
   @include flex-container;
   background-color: $light;
 
@@ -71,7 +71,7 @@ select {
       display: inline-block;
       height: 100%;
       vertical-align: middle;
-    }    
+    }
     &.prepend {
       border-right: 2px solid transparent;
       float: left;
