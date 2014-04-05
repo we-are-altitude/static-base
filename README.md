@@ -13,16 +13,17 @@ Static Base is a minimal static site framework built on top of [Jekyll](https://
 2. `$ bundle install`
 
 ##Launch A Local Server:##
-`$ guard`
+1. `$ guard`
+2. Browse to **http://localhost:4000**
 
-Then browse to **http://localhost:4000**
-
+##Build your site locally:##
+`jekyll build --config _config.yml,_config-local.yml`
 
 ##Deploying to Amazon S3:##
 
 Like any other Jekyll based blog or site, publishing to Amazon S3 is fast, easy and often free. To build your static site, ready for deployment to S3 simply run:
 
-`$ jekyll build --config _config.yml,_config-production.yml'`
+`$ jekyll build --config _config.yml,_config-production.yml`
 
 This will create a new **public** folder in the root with your minified and fingerprinted assets. Drop the contents of this folder in your Amazon S3 bucket of choice and [enable static website hosting](http://docs.aws.amazon.com/AmazonS3/latest/dev/HowDoIWebsiteConfiguration.html). 
 
