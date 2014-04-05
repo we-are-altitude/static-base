@@ -2,7 +2,7 @@
 /* Grid
 /* ========================================================================= */
 
-@mixin column($width: 100%) {
+@mixin row($width: 100%) {
   display: table;
   height: auto;
   float: none;
@@ -13,10 +13,16 @@
     margin: 0 0;
     width: 100%;
   }
+  @media #{$tablet} {
+    clear: none;
+    width: 100%;
+  }
 }
 
 @mixin cols-($width) {
-  @if $width == 33% {
+  @if $width == 16% {
+    $width: 16.666%;
+  } @else if $width == 33% {
     $width: 33.333%;
   } @else if $width == 66% {
     $width: 66.666%;
@@ -27,6 +33,10 @@
   
   //Media Query
   @media #{$phone} {
+    clear: none;
+    width: 100%;
+  }
+  @media #{$tablet} {
     clear: none;
     width: 100%;
   }
