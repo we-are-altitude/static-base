@@ -4,7 +4,7 @@
 
 input, input[type="text"], input[type="password"], input[type="tel"], input[type="email"], textarea {
   @include transition;
-  @include placeholder{color: $medium; font-weight:inherit;};
+  @include placeholder($medium);
   @extend .normal-text;
   background-color: $light;
   border: 2px solid transparent;
@@ -23,12 +23,12 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
     color: $dark;
   }
   &.error {
-    @include placeholder{color: #fff;};
+    @include placeholder(#fff);
     background-color: $red;
     color: #fff;
   }
   &.disabled, &[disabled] {
-    @include placeholder{color: $light;};
+    @include placeholder($light);
     background-color: $medium;
     color: $light;
   }
