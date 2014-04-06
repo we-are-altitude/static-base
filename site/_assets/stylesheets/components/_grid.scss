@@ -9,13 +9,12 @@
   width: $width;
   
   //Media Query
-  @media #{$phone} {
-    margin: 0 0;
-    width: 100%;
-  }
   @media #{$tablet} {
     clear: none;
     width: 100%;
+  }
+  @media #{$phone} {
+    margin: 0 0;
   }
 }
 
@@ -32,10 +31,6 @@
   width: $width;
   
   //Media Query
-  @media #{$phone} {
-    clear: none;
-    width: 100%;
-  }
   @media #{$tablet} {
     clear: none;
     width: 100%;
