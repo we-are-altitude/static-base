@@ -6,7 +6,7 @@
   padding: 0 2rem;
   
   main {
-    @include column;
+    @include row;
     section {
       @include cols-(50%);
     }
@@ -71,7 +71,7 @@
     }
     
     .container > div {
-      @include column;
+      @include row;
       margin-bottom: 1rem;
     }
   }
@@ -82,7 +82,7 @@
   }
   
   .cols-3 {
-    @include column;
+    @include row;
     background-color: $light;
     color: $dark;
     padding: .5rem;
@@ -105,8 +105,9 @@
     @extend .cols-3;
     
     div {
-      @include column(50%);
+      @include row;
       margin: 0 auto;
+      max-width: 50%;
     }
   }
   
@@ -114,8 +115,9 @@
     @extend .cols-3;
     
     & > div {
-      @include column(50%);
+      @include row;
       margin: 0 auto;
+      max-width: 50%;
       
       div {
         @include cols-(50%);
