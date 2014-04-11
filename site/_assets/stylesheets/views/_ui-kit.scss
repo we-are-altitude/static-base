@@ -3,7 +3,6 @@
 /* ========================================================================= */
 
 .ui-kit {
-  padding: 0 2rem;
   
   main {
     @include row;
@@ -16,22 +15,32 @@
     @extend .normal-text;
   }
   
-  h3 {
+  title {
+    @extend h3;
     @extend .light-text;
     color: $medium;
-    font-size: 0.889rem;
+    display: block;
     margin-bottom: 0.778rem;
+    position: relative;
+    &:after {
+      background-color: darken($light, 5%);
+      bottom: -4px;
+      content: " ";
+      display: inline-block;
+      height: 1px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
   }
   
-  
-  .container {
+  main > h1, .container {
     margin: 2rem 0;
+    padding: 0 2rem;
   }
   
   .color-palette {
-    @include cols-(70%);
-    max-width: 20rem;
-    
+    max-width: 24rem;
     div {
       @include border-radius(4rem);
       content: "";
@@ -51,79 +60,99 @@
   
   .form-container {
     text-align: right;
-    
-    h3 {
+    title {
       text-align: left;
     }
-    
     label {
       @include cols-(36%);
       line-height: 2rem;
       margin: 0 4% 0 0;
     }
-    
-    button, div > input, .input-group {
+    button, div > input, .pend-group {
       @include cols-(60%);
     }
-    
     .btn-primary {
       @extend .btn-blue;
     }
-    
     .container > div {
       @include row;
       margin-bottom: 1rem;
     }
   }
   
-  
-  .grid > div {
-    margin: 1rem 0;
-  }
-  
-  .cols-3 {
-    @include row;
+  .sample-text {
     background-color: $light;
-    color: $dark;
-    padding: .5rem;
-    
-    h3 {
-      color: #111;
-    }
-    
-    div {
-      @include cols-(33%);
-      background-color: $medium;
-      border: 2px solid $dark;
-      height: 3rem;
-      padding: .5rem;
-    }
-  }
-  
-  
-  .cols-1 {
-    @extend .cols-3;
-    
-    div {
-      @include row;
-      margin: 0 auto;
-      max-width: 50%;
-    }
-  }
-  
-  .cols-1-2 {
-    @extend .cols-3;
-    
-    & > div {
-      @include row;
-      margin: 0 auto;
-      max-width: 50%;
-      
-      div {
-        @include cols-(50%);
+    padding-bottom: 2em;
+    margin-bottom: 2em;
+    article {
+      .hero {
+        background-color: $medium;
+        color: #fff;
+        text-align: center;
+        h1 {
+          padding: 1.5em 0;
+        }
+        h2 {
+          padding-bottom: 1.5em;
+        }
+      }
+      .container {
+        margin: 0;
+        padding: 0 2em;
       }
     }
   }
   
+  .grid {
+    > div {
+      margin: 1rem 0;
+    }
+    .basic-grid-sample {
+      @include row;
+      background-color: $light;
+      color: $dark;
+      padding: .5rem;
+      h3 {
+        color: #111;
+      }
+      div {
+        @include cols-(33%);
+        background-color: $medium;
+        border: 2px solid $dark;
+        height: 3rem;
+        padding: .5rem;
+      }
+    }
+    .basic-grid-sample-2 {
+      @extend .basic-grid-sample;
+      div {
+        @include row;
+        margin: 0 auto;
+        max-width: 50%;
+      }
+    }
+    .nested-grid-sample {
+      @extend .basic-grid-sample;
+      & > div {
+        @include row;
+        margin: 0 auto;
+        max-width: 50%;
+        div {
+          @include cols-(50%);
+        }
+      }
+    }
+  }
+  
+  @media #{$widescreen} {
+    .columns-test {
+      @include text-columns(3, 2em);
+      text-align: justify;
+      p{
+        display: inline;
+        margin: 0;
+      }
+    }
+  }
 }
 

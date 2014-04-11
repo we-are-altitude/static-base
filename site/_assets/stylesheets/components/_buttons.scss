@@ -25,6 +25,10 @@ button, input[type="submit"], input[type="button"], .btn {
   &:active {
     @include box-shadow("0 0 .7778em -.4444em rgba(0, 0, 0, 0.75) inset !important");
   }
+  
+  @media #{$tablet} {
+    font-size: .889rem;
+  }
 }
 
 /* ========================================================================= */
@@ -33,15 +37,12 @@ button, input[type="submit"], input[type="button"], .btn {
 /* ========================================================================= */
 @mixin btn-base($color, $hover: #fff) {
   background-color: $color;
-  &:hover, &:focus, &:active, &.active {
+  &:hover, &:focus, &:active, &:visited, &.active {
     background-color: lighten($color,5%);
     border: 0;
     color: $hover;
   }
-  &.disabled:hover, &.disabled:focus, &.disabled:active, &.disabled.active,
-  &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled].active,
-  fieldset[disabled] &:hover, fieldset[disabled] &:focus, fieldset[disabled] &:active,
-  fieldset[disabled] &.active {
+  &.disabled:hover, &.disabled:focus, &.disabled:active, &.disabled:visited, &.disabled.active, &[disabled]:hover, &[disabled]:focus, &[disabled]:active, &[disabled]:visited, &[disabled].active, fieldset[disabled] &:hover, fieldset[disabled] &:focus, fieldset[disabled] &:active, fieldset[disabled] &.active {
     background-color: $medium; 
     color: lighten($medium, 15%);
     cursor: default;

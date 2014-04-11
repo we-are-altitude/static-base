@@ -32,6 +32,10 @@ input, input[type="text"], input[type="password"], input[type="tel"], input[type
     background-color: $medium;
     color: $light;
   }
+  
+  @media #{$tablet} {
+    font-size: .889rem;
+  }
 }
 
 textarea {
@@ -58,9 +62,11 @@ select {
   input {
     @include flex;
     float: left;
+    width: auto;
   }
   
   span {
+    @include flex(0);
     @extend .bold-text;
     @extend input;
     color: darken($light, 25%);

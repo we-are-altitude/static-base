@@ -50,13 +50,21 @@
   }
 }
 
+@mixin text-columns($columns, $gap: normal) {
+ column-count: $columns;
+ column-gap: $gap;
+ -moz-column-count: $columns;
+ -moz-column-gap: $gap;
+ -webkit-column-count: $columns;
+ -webkit-column-gap: $gap;
+}
 
-@mixin flex {
-  -webkit-box-flex: 1;
-  -moz-box-flex: 1;
-  -webkit-flex: 1;
-  -ms-flexbox: 1;
-  flex: 1 1 auto;
+@mixin flex($weight: 1) {
+  -webkit-box-flex: $weight;
+  -moz-box-flex: $weight;
+  -webkit-flex: $weight;
+  -ms-flexbox: $weight;
+  flex: $weight 1 auto;
 }
 
 
@@ -98,7 +106,6 @@
   -ms-user-select: none;
   user-select: none; 
 }
-
 
 
 @mixin placeholder($color) {

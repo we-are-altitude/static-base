@@ -17,11 +17,35 @@
 
 html, body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 1.062rem;
+  
+  @media #{$tablet} {
+    font-size: 0.944rem;
+  }
+  @media #{$phone} {
+    font-size: 0.889rem;
+  }
 }
 
 html {
   position: relative;
+}
+
+h1, h2, h3 {
+  font-size: 2.5rem;
+  @media #{$phone} {
+    br {
+      display: none;
+    }
+  }
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 body, .normal-text {
