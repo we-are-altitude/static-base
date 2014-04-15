@@ -15,8 +15,7 @@
     @extend .normal-text;
   }
   
-  title {
-    @extend h3;
+  h3 {
     @extend .light-text;
     color: $medium;
     display: block;
@@ -35,12 +34,13 @@
   }
   
   main > h1, .container {
-    margin: 2rem 0;
+    margin-bottom: 3rem;
     padding: 0 2rem;
   }
   
   .color-palette {
     max-width: 24rem;
+    margin-left: 0;
     div {
       @include border-radius(4rem);
       content: "";
@@ -97,7 +97,7 @@
         }
       }
       .container {
-        margin: 0;
+        margin-bottom: 0;
         padding: 0 2em;
       }
     }
