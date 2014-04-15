@@ -11,23 +11,23 @@ $blue: #489cf1;
 $green: #3CCE7B;
 $red: #d44545;
 
-  
+
 /* ========================================================================= */
 /* Media Queries
 /* ========================================================================= */
 
-// <= 599px
-$phone: "screen and (max-width: 33.278rem)";
+// <= 599px // 33.278rem
+$phone: "only screen and (max-width: 599px)";
 
 
-// <= 959px
-$tablet: "screen and (max-width: 53.278rem)";
+// <= 959px // 53.278rem
+$tablet: "only screen and (max-width: 959px)";
 
 
-// <= 1167px
-$desktop: "screen and (max-width: 64.833rem)";
+// <= 1167px //64.833rem
+$desktop: "only screen and (max-width: 1167px)";
 
 
-// 1168px+
-$widescreen: "screen and (min-width: 64.889rem)";
+// 1168px+ // 64.889rem+
+$widescreen: "only screen and (min-width: 1168px)";
 

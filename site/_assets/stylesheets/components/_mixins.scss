@@ -50,14 +50,6 @@
   }
 }
 
-@mixin text-columns($columns, $gap: normal) {
- column-count: $columns;
- column-gap: $gap;
- -moz-column-count: $columns;
- -moz-column-gap: $gap;
- -webkit-column-count: $columns;
- -webkit-column-gap: $gap;
-}
 
 @mixin flex($weight: 1) {
   -webkit-box-flex: $weight;
@@ -126,6 +118,9 @@
     color: $color;
     -webkit-font-smoothing: antialiased;
   };
+  &.placeholder {
+    color: $color;
+  }
 }
 
 
@@ -171,6 +166,14 @@
   }
 }
 
+@mixin text-columns($columns, $gap: normal) {
+ column-count: $columns;
+ column-gap: $gap;
+ -moz-column-count: $columns;
+ -moz-column-gap: $gap;
+ -webkit-column-count: $columns;
+ -webkit-column-gap: $gap;
+}
 
 @mixin transform($arguments) {
   transform: $arguments;
